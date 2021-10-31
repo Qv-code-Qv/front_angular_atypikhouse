@@ -1,0 +1,29 @@
+.contact-page{
+    margin: auto 0% auto 0%;
+}
+
+form, app-content-contact-page{
+    width: 400px;
+    height: 500px;
+    margin: 5% 0% 5% 15%;
+    display: inline-block;
+}
+
+.contact-full-width{
+    display: block;
+    margin : auto;
+}
+
+button{
+
+    border: none;
+    color: white;
+    background-color: #118041;
+    width: 120px;
+    min-height: 50px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(23, 156, 63);
+}

@@ -1,0 +1,48 @@
+<form class="search-form" [formGroup]="form">
+  <img class="search-form-img" src="/assets/img/Logo2.png" alt="Logo atypikhouse" height="200px" width="200px">
+  <h3>Réservez-maintenant votre AtypikHouse</h3>
+  <section>
+    <mat-form-field appearance="outline">
+      <mat-label>Dates de voyage</mat-label>
+      <mat-date-range-input [rangePicker]="rangePicker">
+        <input matStartDate formControlName='dateFrom' placeholder="Date arrivée">
+        <input matEndDate formControlName='dateTo' placeholder="Date Départ">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+      <mat-date-range-picker #rangePicker>
+        <mat-date-range-picker-actions>
+          <button mat-button matDateRangePickerCancel>Annuler</button>
+          <button mat-raised-button color="primary" matDateRangePickerApply>Confirmer</button>
+        </mat-date-range-picker-actions>
+      </mat-date-range-picker>
+      <mat-error *ngIf="form.get('dateFrom')?.hasError('required')">La date d'arrivée est nécessaire</mat-error>
+      <mat-error *ngIf="form.get('dateTo')?.hasError('required')">La date de départ est nécessaire</mat-error>
+    </mat-form-field>
+  </section>
+
+  <section>
+    <mat-form-field class="person-field" appearance="outline">
+      <mat-label>Adultes</mat-label>
+      <input matInput type="number" formControlName='nbPerson'>
+      <mat-error *ngIf="form.get('nbPerson')?.hasError('required')">Le nombre d'adultes est requis</mat-error>
+      <mat-error *ngIf="form.get('nbPerson')?.hasError('min')">Il faut au moins un adulte</mat-error>
+    </mat-form-field>
+    <mat-form-field class="person-field" appearance="outline">
+      <mat-label>Enfants</mat-label>
+      <input matInput type="number" formControlName='nbChildren'>
+    </mat-form-field>
+  </section>
+
+  <section>
+    <mat-form-field class="city-field" appearance="outline">
+      <mat-label>Ville</mat-label>
+      <input matInput type="text" formControlName='city'>
+      <mat-error *ngIf="form.get('city')?.hasError('required')">La ville est requise</mat-error>
+    </mat-form-field>
+  </section>
+
+  <section>
+    <button mat-raised-button type="button" (click)="onSave(form.value)" [disabled]="!form.valid">Rechercher</button>
+  </section>
+
+</form>

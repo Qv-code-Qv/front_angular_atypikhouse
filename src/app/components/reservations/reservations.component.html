@@ -1,0 +1,43 @@
+<app-dashboard></app-dashboard>
+<section class="list-container" *ngIf="house">
+<div class="container">
+    <div class="reservations-section">
+        <h3>Mes réservations</h3>
+        <mat-divider></mat-divider>
+        <mat-tab-group>
+            <mat-tab label="Réservations en cours">
+                <mat-card>
+                    <mat-card-title>{{house.title}}</mat-card-title>
+                    <img mat-card-image src="{{house.fileUrl}}">
+                    <mat-chip>Status: {{house.status}}</mat-chip>
+                </mat-card>
+                <mat-divider></mat-divider>
+                <mat-card>
+                    <mat-card-title>house title</mat-card-title>
+                    <img mat-card-image src="/src/assets/img/Logo2.png">
+                    <mat-chip>Statut : Validée</mat-chip>
+                </mat-card>
+                <mat-divider></mat-divider>
+                <mat-card-content>
+                    <mat-list role="list" class="list-house">
+                        <mat-chip-list aria-label="Activités">
+                            <mat-chip>
+                            </mat-chip>
+                        </mat-chip-list>
+                    </mat-list>
+                </mat-card-content>
+            </mat-tab>
+            <mat-tab label="Réservations passées">Aucune réservation passé
+                <mat-card-content>
+                    <mat-list role="list" class="list-house">
+                        <mat-chip-list aria-label="Activités">
+                            <mat-chip>
+                            </mat-chip>
+                        </mat-chip-list>
+                    </mat-list>
+                </mat-card-content>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+</section>

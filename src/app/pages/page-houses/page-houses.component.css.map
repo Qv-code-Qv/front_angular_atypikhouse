@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACZ,OAAO,EAAC,IAAI;EACZ,SAAS,EAAE,IAAI;CAClB;;AAED,AAAA,oBAAoB,CAAC;EACjB,MAAM,EAAE,GAAG;EACX,SAAS,EAAC,KAAK;CAClB",
+    "sources": [
+        "page-houses.component.scss"
+    ],
+    "names": [],
+    "file": "page-houses.component.css"
+}

@@ -1,0 +1,13 @@
+.list-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.hebergement-listing {
+  margin: 5px;
+  max-width: 350px;
+}
+/*# sourceMappingURL=page-houses.component.css.map */

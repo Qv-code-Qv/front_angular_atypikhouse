@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,sBAAsB;AACtB,AAAA,mBAAmB,CAAA;EACf,OAAO,EAAE,IAAI;EACb,eAAe,EAAC,MAAM;CACzB",
+    "sources": [
+        "page-register.component.scss"
+    ],
+    "names": [],
+    "file": "page-register.component.css"
+}

@@ -1,0 +1,106 @@
+<form class="add-house-form" [formGroup]="form">
+	<h3>Ajoutez votre AtypikHouse dès maintenant</h3>
+	<section>
+		<mat-form-field appearance="outline">
+			<mat-label>Titre</mat-label>
+			<input matInput formControlName='title'>
+			<mat-error *ngIf="form.get('title')?.hasError('required')">Titre Requis</mat-error>
+			<mat-error *ngIf="form.get('title')?.hasError('minlength')">Le titre doit contenir au moins 2 caractères
+			</mat-error>
+			<mat-error *ngIf="form.get('title')?.hasError('pattern')">Le titre doit contenir que des lettres</mat-error>
+		</mat-form-field>
+	</section>
+	<section>
+		<mat-form-field appearance="outline">
+			<mat-label>Description</mat-label>
+			<textarea matInput formControlName='description'></textarea>
+			<mat-error *ngIf="form.get('description')?.hasError('required')">Description Requise</mat-error>
+			<mat-error *ngIf="form.get('description')?.hasError('minlength')">La description doit contenir au moins 5
+				caractères</mat-error>
+			<mat-error *ngIf="form.get('description')?.hasError('maxLength')">La description ne doit pas contenir plus
+				de 255caractères</mat-error>
+		</mat-form-field>
+	</section>
+	<section>
+		<mat-form-field appearance="outline">
+			<mat-label>Adresse</mat-label>
+			<input matInput formControlName='address'>
+			<mat-error *ngIf="form.get('address')?.hasError('required')">Adresse Requise</mat-error>
+			<mat-error *ngIf="form.get('address')?.hasError('minlength')">L'adresse doit contenir au moins 5 caractères
+			</mat-error>
+			<mat-error *ngIf="form.get('address')?.hasError('maxLength')">L'adresse ne doit pas contenir plus de 255
+				caractères</mat-error>
+		</mat-form-field>
+	</section>
+	<section>
+		<mat-form-field appearance="outline">
+			<mat-label>Ville</mat-label>
+			<input matInput formControlName='city'>
+			<mat-error *ngIf="form.get('city')?.hasError('required')">Ville Requise</mat-error>
+			<mat-error *ngIf="form.get('city')?.hasError('minlength')">La ville doit contenir minimum de 2 caractères
+			</mat-error>
+			<mat-error *ngIf="form.get('city')?.hasError('maxLength')">La ville ne doit pas contenir plus de 255
+				caractères
+			</mat-error>
+		</mat-form-field>
+	</section>
+	<section>
+		<mat-form-field appearance="outline">
+			<mat-label>Code postal</mat-label>
+			<input matInput type="number" formControlName='zipCode'>
+			<mat-error *ngIf="form.get('zipCode')?.hasError('required')">Code postal Requis</mat-error>
+			<mat-error *ngIf="form.get('zipCode')?.hasError('pattern')">Le code postal doit contenir que des chiffres
+			</mat-error>
+		</mat-form-field>
+	</section>
+	<section>
+		<mat-form-field appearance="outline">
+			<mat-label>Nombre de lits</mat-label>
+			<input matInput type="number" formControlName='nombreDeLits'>
+			<mat-error *ngIf="form.get('nombreDeLits')?.hasError('required')">Nombre de lits Requis</mat-error>
+			<mat-error *ngIf="form.get('nombreDeLits')?.hasError('min')">Il faut au moins un lit</mat-error>
+		</mat-form-field>
+	</section>
+	<section>
+		<mat-form-field appearance="outline">
+			<mat-label>Prix €</mat-label>
+			<input matInput type="number" formControlName='price'>
+			<mat-error *ngIf="form.get('price')?.hasError('required')">Le prix est Requis</mat-error>
+			<mat-error *ngIf="form.get('price')?.hasError('pattern')"></mat-error>
+		</mat-form-field>
+	</section>
+	<section>
+		<mat-form-field appearance="outline">
+			<mat-label>Taxe €</mat-label>
+			<input matInput type="number" formControlName='tax'>
+			<mat-error *ngIf="form.get('tax')?.hasError('pattern')"></mat-error>
+		</mat-form-field>
+	</section>
+	<section>
+		<mat-form-field class="example-chip-list" appearance="outline">
+			<mat-label>Tags</mat-label>
+			<mat-chip-list #chipList aria-label="Fruit selection">
+				<mat-chip *ngFor="let activity of activities" [selectable]="selectable" [removable]="removable"
+					(removed)="remove(activity)">
+					{{activity.name}}
+					<mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+				</mat-chip>
+				<input placeholder="Nouveau tag" [matChipInputFor]="chipList"
+					[matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+					(matChipInputTokenEnd)="add($event)">
+			</mat-chip-list>
+		</mat-form-field>
+	</section>
+	
+	<section class="imagefile">
+		<label for="file">Ajoutez une image de votre hebergement</label><br>
+		<input type="file" (change)="onFileChanged($event)" formControlName='imagefile'>
+		<mat-error *ngIf="form.get('imagefile')?.hasError('required')">L'image est nécessaire</mat-error>
+	</section>
+	
+	<section>
+		<div class="container-button">
+			<button mat-raised-button type="button" class="button" [disabled]="!form.valid">Ajouter</button>
+		</div>
+	</section>
+</form>

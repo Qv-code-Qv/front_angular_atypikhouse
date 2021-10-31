@@ -1,0 +1,28 @@
+form{
+    margin: 2% 0% 2% 0%;
+}
+
+h3{
+    text-align: center;
+}
+
+mat-form-field{
+    width: 300px;
+    display: block;
+    margin : auto auto auto 50%;
+}
+
+button{
+    border: none;
+    color: white;
+    background-color: #118041;
+    width: 150px;
+    min-height: 50px;
+    display: block;
+    margin : auto;
+}
+
+button:hover {
+	cursor: pointer;
+    background-color: rgb(23, 156, 63);
+}

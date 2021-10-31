@@ -1,0 +1,71 @@
+<app-dashboard></app-dashboard>
+<h3>Mes informations personnelles</h3>
+<mat-divider></mat-divider>
+<form >
+    <mat-form-field appearance="outline" >
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="">
+        <mat-error *ngIf="form.get('email')?.invalid">Adresse mail invalide</mat-error>
+      </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="">
+        <mat-error *ngIf="form.get('firstName')?.hasError('minlength')">Le nom doit contenir au moins 2 caractères
+        </mat-error>
+        <mat-error *ngIf="form.get('firstName')?.hasError('pattern')">Le nom doit contenir que des lettres</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Prénom</mat-label>
+        <input matInput placeholder="">
+        <mat-error *ngIf="form.get('lastName')?.hasError('minlength')">Le prénom doit contenir au moins 2 caractères
+        </mat-error>
+        <mat-error *ngIf="form.get('lastName')?.hasError('pattern')">Le prénom doit contenir que des lettres</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Adresse</mat-label>
+        <input matInput placeholder="">
+        <mat-error *ngIf="form.get('address')?.hasError('minlength')">L'adresse doit contenir au moins 5 caractères
+        </mat-error>
+        <mat-error *ngIf="form.get('address')?.hasError('maxLength')">L'adresse ne doit pas contenir plus de 255
+          caractères</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Ville</mat-label>
+        <input matInput placeholder="">
+        <mat-error *ngIf="form.get('city')?.hasError('minlength')">La ville doit contenir minimum de 2 caractères
+        </mat-error>
+        <mat-error *ngIf="form.get('city')?.hasError('maxLength')">La ville ne doit pas contenir plus de 255 caractères
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Code postal</mat-label>
+        <input matInput placeholder="">
+        <mat-error *ngIf="form.get('zipCode')?.hasError('pattern')">Le code postal doit contenir que des chiffres
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Téléphone</mat-label>
+        <input matInput placeholder="">
+        <mat-error *ngIf="form.get('phoneNumber')?.hasError('pattern')">Le téléphonne doit contenir que des chiffres
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput placeholder="">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Confirmer mot de passe</mat-label>
+        <input matInput placeholder="">
+        <mat-error *ngIf="form.hasError('confirmationPassword')">Les mots de passe doivent être identiques
+        </mat-error>
+      </mat-form-field>
+    <button mat-raised-button type="button" [disabled]="!form.valid">Modifier</button>
+</form>

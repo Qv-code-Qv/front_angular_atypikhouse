@@ -1,0 +1,31 @@
+form{
+	max-height: max-content;
+	width: 50%;
+	margin: auto auto auto auto;
+	border-radius: 5px;
+}
+
+  mat-form-field, .imagefile{
+    display: flex;
+    flex-direction: column;
+    margin: 0% 5% 0% 5%;
+  }
+
+  h3{
+    text-align: center;
+    margin: 10% auto 5% auto;
+  }
+
+  button{
+    border: none;
+    color: white;
+    background-color: #118041;
+    width: 150px;
+    min-height: 50px;
+    margin: 3% auto 3% 5%;
+  }
+  
+  button:hover {
+    cursor: pointer;
+    background-color: rgb(23, 156, 63);
+  }

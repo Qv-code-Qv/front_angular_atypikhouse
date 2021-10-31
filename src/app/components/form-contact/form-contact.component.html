@@ -1,0 +1,34 @@
+<div class="contact-page">
+  <app-content-contact-page></app-content-contact-page>
+  <form class="contact-form" [formGroup]="form">
+    <mat-form-field class="contact-full-width" appearance="outline">
+      <mat-label>Prénom</mat-label>
+      <input matInput formControlName='firstName'>
+      <mat-error *ngIf="form.get('firstName')?.hasError('required')">Prénom Requis</mat-error>
+      <mat-error *ngIf="form.get('firstName')?.hasError('minlength')">Le prénom doit contenir plus de 2 caractères</mat-error>
+      <mat-error *ngIf="form.get('firstName')?.hasError('pattern')">Le prénom doit contenir que des lettres</mat-error>
+    </mat-form-field>
+    <mat-form-field class="contact-full-width" appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName='lastName'>
+      <mat-error *ngIf="form.get('lastName')?.hasError('required')">Nom Requis</mat-error>
+      <mat-error *ngIf="form.get('lastName')?.hasError('minlength')">Le nom doit contenir plus de 2 caractères</mat-error>
+      <mat-error *ngIf="form.get('lastName')?.hasError('pattern')">Le nom doit contenir que des lettres</mat-error>
+    </mat-form-field>
+    <mat-form-field class="contact-full-width" appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName='email'>
+    <mat-error *ngIf="form.get('email')?.invalid">Adresse mail invalide</mat-error>
+    </mat-form-field>
+    <mat-form-field class="contact-full-width" appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea matInput  formControlName='message'></textarea>
+      <mat-error *ngIf="form.get('message')?.hasError('required')">Message Requis</mat-error>
+      <mat-error *ngIf="form.get('message')?.hasError('minlength')">Le message doit contenir plus de 1 caractères</mat-error>
+      <mat-error *ngIf="form.get('message')?.hasError('maxlength')">Le message peut contenir 255 caractères maxmimum</mat-error>
+    </mat-form-field>
+    <div class="button-row">
+      <button class="Send-button" (click)="onSave(form.value)" [disabled]="!form.valid">Envoyer</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+<form class="login-form" [formGroup]="form">
+	<!---image-->
+	<img class="login-form-img" src="/assets/img/Logo2.png" alt="Logo atypikhouse" height= "200px" width= "200px">
+	<!---email field-->
+	<mat-form-field class="example-full-width" appearance="outline">
+	  <mat-label>E-mail</mat-label>
+	  <input matInput formControlName='email'>
+	  <mat-error *ngIf="form.get('email')?.invalid">Adresse mail invalide</mat-error>
+	</mat-form-field>
+	<!---mot de passe field-->
+	<mat-form-field class="login-full-width" appearance="outline">
+		<mat-label>Mot de passe</mat-label>
+		<input type="password" matInput formControlName='password'>
+		<mat-error *ngIf="form.get('password')?.hasError('required')">Mot de passe Requis</mat-error>
+		<mat-error *ngIf="form.get('password')?.hasError('minlength')">Le mot de passe doit contenir au moins 8 caractères</mat-error>
+	</mat-form-field>
+	<section class="login-full-width">
+		<div class="container-button">
+		  <button mat-raised-button type="button" class="button" (click)="onSave(form.value)"  [disabled]="!form.valid">Se Connecter</button>	  
+		</div>
+	</section>
+	<div class="text">
+		<p>Pas encore inscrit ? <a routerLink="/register" style="color: #118041;">Inscrivez-vous</a></p>
+	</div>
+</form>

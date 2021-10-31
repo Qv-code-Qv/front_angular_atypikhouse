@@ -1,0 +1,28 @@
+/*formulaire*/
+.register-form{
+    text-align: center;
+    margin: 5% auto 5% auto;
+}
+
+.register-full-width{
+    display:grid;
+    vertical-align: top;
+    width: 350px;
+}
+
+
+/*button*/
+
+button{
+
+    border: none;
+    color: white;
+    background-color: #118041;
+    width: 150px;
+    min-height: 50px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(23, 156, 63);
+}

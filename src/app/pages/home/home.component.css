@@ -1,0 +1,15 @@
+/*section*/
+.section {
+  height: 100%;
+}
+
+/****** Contenu de la section home ********/
+.section-search {
+  background-image: url("/assets/img/fond.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: relative;
+  position: relative;
+  height: 89vh;
+}
+/*# sourceMappingURL=home.component.css.map */

@@ -1,0 +1,33 @@
+.dashboard{
+    color: white;
+    height: 100vh;
+    background-color: #118041;
+    float: left;
+}
+
+.button{
+    color: white;
+    background-color: #118041;
+    display: block;
+    margin-left: 2.1em;
+    margin-right: auto;
+    border: 0;
+
+}
+
+.button:hover{
+    background-color: white;
+    color: black;
+}
+
+a{
+    color: white ;
+}
+
+a:active{
+    background-color: white;
+}
+
+h4{
+    margin: 0% 0% 0% 5%;
+}

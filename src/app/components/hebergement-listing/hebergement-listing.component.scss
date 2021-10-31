@@ -1,0 +1,42 @@
+.container-image {
+    height:250px;
+}
+
+.card-house {
+    max-width: 400px;
+}
+
+.container-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: end;
+    font-size: 1.1em;
+}
+
+.content-text {
+    height: 65px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    width: 39px;
+}
+
+.price {
+    font-weight: bold;
+    color: #278c52;
+    font-size: 1.3em;
+}
+
+
+
+
+
+
+
+
+

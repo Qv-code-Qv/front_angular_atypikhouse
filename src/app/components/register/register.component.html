@@ -1,0 +1,90 @@
+<form class="register-form" [formGroup]="form">
+	<img class="login-form-img" src="/assets/img/Logo2.png" alt="Logo atypikhouse" height= "200px" width= "200px">
+	<mat-form-field class="register-full-width" appearance="outline">
+		<mat-label>E-mail</mat-label>
+		<input matInput formControlName='email'>
+		<mat-error *ngIf="form.get('email')?.invalid">Adresse mail invalide</mat-error>
+	</mat-form-field>
+	<mat-form-field class="register-full-width" appearance="outline">
+		<mat-label>Nom</mat-label>
+		<input matInput formControlName='firstName'>
+		<!-- Pour le nom des "hasErrors", ils correspondent au noms des fonctions de validation -->
+		<mat-error *ngIf="form.get('firstName')?.hasError('required')">Nom Requis</mat-error>
+		<mat-error *ngIf="form.get('firstName')?.hasError('minlength')">Le nom doit contenir au moins 2 caractères
+		</mat-error>
+		<mat-error *ngIf="form.get('firstName')?.hasError('pattern')">Le nom doit contenir que des lettres</mat-error>
+	</mat-form-field>
+
+	<mat-form-field class="register-full-width" appearance="outline">
+		<mat-label>Prénom</mat-label>
+		<input matInput formControlName='lastName'>
+		<mat-error *ngIf="form.get('lastName')?.hasError('required')">Prénom Requis</mat-error>
+		<mat-error *ngIf="form.get('lastName')?.hasError('minlength')">Le prénom doit contenir au moins 2 caractères
+		</mat-error>
+		<mat-error *ngIf="form.get('lastName')?.hasError('pattern')">Le prénom doit contenir que des lettres</mat-error>
+	</mat-form-field>
+
+	<mat-form-field class="register-full-width" appearance="outline" id="register-full-width-address">
+		<mat-label>Adresse</mat-label>
+		<input matInput formControlName='address'>
+		<mat-error *ngIf="form.get('address')?.hasError('required')">Adresse Requis</mat-error>
+		<mat-error *ngIf="form.get('address')?.hasError('minlength')">L'adresse doit contenir au moins 5 caractères
+		</mat-error>
+		<mat-error *ngIf="form.get('address')?.hasError('maxLength')">L'adresse ne doit pas contenir plus de 255
+			caractères</mat-error>
+	</mat-form-field>
+
+	<mat-form-field class="register-full-width" appearance="outline">
+		<mat-label>Ville</mat-label>
+		<input matInput formControlName='city'>
+		<mat-error *ngIf="form.get('city')?.hasError('required')">Ville Requis</mat-error>
+		<mat-error *ngIf="form.get('city')?.hasError('minlength')">La ville doit contenir minimum de 2 caractères
+		</mat-error>
+		<mat-error *ngIf="form.get('city')?.hasError('maxLength')">La ville ne doit pas contenir plus de 255 caractères
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field class="register-full-width" appearance="outline">
+		<mat-label>Code postal</mat-label>
+		<input matInput type="number" formControlName='zipCode'>
+		<mat-error *ngIf="form.get('zipCode')?.hasError('required')">Code postal Requis</mat-error>
+		<mat-error *ngIf="form.get('zipCode')?.hasError('pattern')">Le code postal doit contenir que des chiffres
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field class="register-full-width" appearance="outline">
+		<mat-label>Téléphone</mat-label>
+		<input matInput formControlName='phoneNumber'>
+		<mat-error *ngIf="form.get('phoneNumber')?.hasError('required')">Téléphonne Requis</mat-error>
+		<mat-error *ngIf="form.get('phoneNumber')?.hasError('pattern')">Le téléphonne doit contenir que des chiffres
+		</mat-error>
+	</mat-form-field>
+
+	<mat-form-field class="register-full-width" appearance="outline">
+		<mat-label>Mot de passe</mat-label>
+		<input matInput formControlName='password' type="password">
+		<mat-error *ngIf="form.get('password')?.hasError('required')">Mot de passe Requis</mat-error>
+	</mat-form-field>
+
+	<mat-form-field class="register-full-width" appearance="outline">
+		<mat-label>Confirmer mot de passe</mat-label>
+		<input matInput formControlName='confirmPassword' type="password">
+		<mat-error *ngIf="form.get('confirmPassword')?.hasError('required')">Vous devez confirmer votre mot de passe
+		</mat-error>
+		<mat-error *ngIf="form.hasError('confirmationPassword')">Les mots de passe doivent être identiques
+		</mat-error>
+	</mat-form-field>
+
+	<section class="register-full-width">
+		<mat-checkbox formControlName='cgu' class="example-margin">J'accepte les CGU</mat-checkbox>
+		<mat-error *ngIf="form.get('cgu')?.hasError('requiredTrue')">Vous devez confirmer l'acceptation des CGU
+		</mat-error>
+	</section>
+
+	<section class="register-full-width">
+		<div class="container-button">
+			<button mat-raised-button type="button" class="button" (click)="onSave(form.value)"
+				[disabled]="!form.valid">S'inscrire</button>
+		</div>
+	</section>
+</form>

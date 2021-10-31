@@ -1,0 +1,13 @@
+<div class="dashboard"><br>
+    <h4>Tableau de bord</h4><br>
+    <mat-list>
+        <mat-divider></mat-divider>
+        <mat-list-item><a class="dropdown-item" routerLink="/dashboard/mon-compte">Mon compte</a></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><a class="dropdown-item" routerLink="/dashboard/reservations">Mes réservations</a></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><a class="dropdown-item" routerLink="/ajout-hebergement">Devenir hote</a></mat-list-item>
+        <mat-divider></mat-divider>
+        <button mat-raised-button type="button" class="button" (click)="logout()">Déconnexion</button>
+    </mat-list>
+</div>
